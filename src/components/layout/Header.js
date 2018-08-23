@@ -1,4 +1,9 @@
-import React from 'react';
+import React from 'react'
+import { AppBar, Toolbar } from '@material-ui/core';
 
 export default props => 
-        <h1>Header</h1>
+ <AppBar position="static">
+    <Toolbar>
+
+    </Toolbar>
+  </AppBar>

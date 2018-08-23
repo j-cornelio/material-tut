@@ -1,13 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Header, Footer } from './layout'
+import Exercises from './exercises/Exercises'
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <Fragment>
       	<Header />
+
+      	<Exercises />
+        
         <Footer />
-      </div>
+      </Fragment>
     );
   }
 }
