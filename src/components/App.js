@@ -28,11 +28,13 @@ class App extends Component {
 
   render() {
   	console.log('SHOW ', this.getExercisesByMuscles())
+
+  	const exercises = this.getExercisesByMuscles()
     return (
       <Fragment>
       	<Header />
 
-      	<Exercises />
+      	<Exercises exercises={exercises} />
         
         <Footer muscles={muscles} />
       </Fragment>
