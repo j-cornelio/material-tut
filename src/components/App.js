@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Header, Footer } from './layout'
 import Exercises from './exercises/Exercises'
+import { muscles, exercises} from '../store'
 
 class App extends Component {
   render() {
@@ -10,7 +11,7 @@ class App extends Component {
 
       	<Exercises />
         
-        <Footer />
+        <Footer muscles={muscles} />
       </Fragment>
     );
   }
