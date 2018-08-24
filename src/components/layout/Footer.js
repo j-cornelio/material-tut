@@ -7,13 +7,15 @@ import Tab from '@material-ui/core/Tab';
 export default ({ muscles }) => 
   <Paper>
     <Tabs
-    	value={2}
+    	value={0}
       indicatorColor="primary"
       textColor="primary"
       centered
     >
+      <Tab label="All" />
+
       {muscles.map( group => 
-        <Tab label={group} />
+        <Tab label={group} key={group} />
       )}
     </Tabs>
   </Paper>
