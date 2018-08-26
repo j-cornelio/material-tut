@@ -41,7 +41,9 @@ class App extends Component {
       <Fragment>
       	<Header />
 
-      	<Exercises exercises={exercises} />
+      	<Exercises
+      		category={category}
+      		exercises={exercises} />
         
         <Footer 
         	category={category}
