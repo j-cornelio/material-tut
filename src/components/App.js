@@ -3,13 +3,14 @@ import { Header, Footer } from './layout'
 import Exercises from './exercises/Exercises'
 import { muscles, exercises} from '../store'
 
-console.log('muscles ', muscles)
-console.log('exercises ', exercises)
+// console.log('muscles ', muscles)
+// console.log('exercises ', exercises)
 
 class App extends Component {
 	state = {
 		exercises,
-		category: 'legs'
+		category: 'legs',
+		exercise: {}
 	}
 
 	
@@ -33,17 +34,26 @@ class App extends Component {
 		}))
 	}
 
+	handleExerciseSelected = id => {
+		this.setState( prevState  => ({ 
+			exercise: prevState.exercises.find(ex => ex.id === id) 
+		}))
+	}
+	
+
   render() {
   	const exercises = this.getExercisesByMuscles(),
-  	{ category } = this.state;
+  	{ category, exercise } = this.state;
 
     return (
       <Fragment>
       	<Header />
 
       	<Exercises
+      		exercise={exercise}
       		category={category}
-      		exercises={exercises} />
+      		exercises={exercises}
+      		onSelect={this.handleExerciseSelected} />
         
         <Footer 
         	category={category}
