@@ -45,12 +45,15 @@ export default withStyles(styles) (class extends Component {
 	}
 
 	handleSubmit = () => {
+		const { exercise } = this.state
+
+		this.props.onCreate(exercise)
 	}
 
 	render(){
 		const { open, exercise: { title, description, muscles } } = this.state,
 			{ classes, muscles: categories } = this.props;
-console.log('CLASS ', classes)
+
 		return (
 			<Fragment>
 				<Button variant="fab" onClick={this.handleToggle} mini>
