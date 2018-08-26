@@ -4,10 +4,13 @@ import Tab from '@material-ui/core/Tab';
 
 
 
-export default ({ muscles }) => 
-  <Paper>
+export default ({ muscles, category, onSelect }) => {
+  const index = category 
+      ? muscles.findIndex(group => group === category) + 1 : 0;
+
+  return <Paper>
     <Tabs
-    	value={0}
+      value={ index }
       indicatorColor="primary"
       textColor="primary"
       centered
@@ -18,4 +21,5 @@ export default ({ muscles }) =>
         <Tab label={group} key={group} />
       )}
     </Tabs>
-  </Paper>
+  </Paper>  
+}

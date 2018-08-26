@@ -8,7 +8,8 @@ console.log('exercises ', exercises)
 
 class App extends Component {
 	state = {
-		exercises
+		exercises,
+		category: 'legs'
 	}
 
 	
@@ -26,17 +27,26 @@ class App extends Component {
     )
     }
 
-  render() {
-  	console.log('SHOW ', this.getExercisesByMuscles())
+	handleCategorySelected = category => {
+		this.setState(({
+			category
+		}))
+	}
 
-  	const exercises = this.getExercisesByMuscles()
+  render() {
+  	const exercises = this.getExercisesByMuscles(),
+  	{ category } = this.state;
+
     return (
       <Fragment>
       	<Header />
 
       	<Exercises exercises={exercises} />
         
-        <Footer muscles={muscles} />
+        <Footer 
+        	category={category}
+        	onSelect={this.handleCategorySelected}
+        	muscles={muscles} />
       </Fragment>
     );
   }
