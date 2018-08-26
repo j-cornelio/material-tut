@@ -23,9 +23,9 @@ class App extends Component {
           ? [...exercises[muscles], exercise]
           : [exercise]
 
-        return exercises
-      }, {})
-    )
+	        return exercises
+	      }, {})
+	    )
     }
 
 	handleCategorySelected = category => {
@@ -42,8 +42,9 @@ class App extends Component {
 	
 
   render() {
-  	const exercises = this.getExercisesByMuscles(),
-  	{ category, exercise } = this.state;
+  	const 
+  		exercises = this.getExercisesByMuscles(),
+  		{ category, exercise } = this.state;
 
     return (
       <Fragment>
