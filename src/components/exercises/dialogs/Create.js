@@ -47,7 +47,19 @@ export default withStyles(styles) (class extends Component {
 	handleSubmit = () => {
 		const { exercise } = this.state
 
-		this.props.onCreate(exercise)
+		this.props.onCreate({
+			...exercise,
+			id: exercise.title.toLowerCase().replace(/ /g, '-' )
+		})
+
+		this.setState({
+			open: false,	
+			exercise: {
+				title: '',
+				description: '',
+				muscles: ''
+			}
+		})
 	}
 
 	render(){
